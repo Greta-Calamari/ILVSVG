@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 520 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <defs>
+        <style>
+            @keyframes draw {
+                0% {
+                    stroke-dashoffset: 3000;
+                }
+                60% {
+                    stroke-dashoffset: 0;
+                }
+                70% {
+                    stroke-dashoffset: 0;
+                }
+                100% {
+                    stroke-dashoffset: 3000;
+                }
+            }
+            
+            .mask-path {
+                fill: none;
+                stroke: white;
+                stroke-width: 50;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-dasharray: 3000;
+                stroke-dashoffset: 3000;
+                animation: draw 4s ease-in-out infinite;
+            }
+            
+            .filled-path {
+                fill: url(#goldGradient);
+            }
+        </style>
+        
+        <!-- Gradiente oro-nero -->
+        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d3a900;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Maschera animata per l'effetto serpente -->
+        <mask id="snakeMask">
+            <rect x="0" y="0" width="100%" height="100%" fill="black"/>
+            <path class="mask-path" d="M81,153L88,153L88,123L241,67L241,153L249,153L249,63L282,52L282,153L289,153L290,41L249,55L249,11L442,82L442,153L449,153L449,77L241,0L241,58L81,117L81,153Z"/>
+            <path class="mask-path" d="M449,134.818L502,152L517,152L450,127L337,87L337,152L344,152L344,97L449,134.818Z"/>
+        </mask>
+    </defs>
+    
+    <!-- Percorsi riempiti con maschera animata per effetto serpente -->
+    <path class="filled-path" mask="url(#snakeMask)" d="M81,153L88,153L88,123L241,67L241,153L249,153L249,63L282,52L282,153L289,153L290,41L249,55L249,11L442,82L442,153L449,153L449,77L241,0L241,58L81,117L81,153Z"/>
+    <path class="filled-path" mask="url(#snakeMask)" d="M449,134.818L502,152L517,152L450,127L337,87L337,152L344,152L344,97L449,134.818Z"/>
+</svg>
